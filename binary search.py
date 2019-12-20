@@ -1,14 +1,4 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[3]:
-
-
 import numpy as np
-
-
-# In[264]:
-
 
 lista = 1, 2, 3, 4, 5, 6, 7
 target = 5
@@ -30,11 +20,5 @@ def busca_recursiva(lista, target):
         lista = lista[:aleatorio]
         print('nova lista agora é:',lista)
         return busca_recursiva(lista, target)
+
 busca_recursiva(lista, target)
-
-
-# In[ ]:
-
-
-
-
