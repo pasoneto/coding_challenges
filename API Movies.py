@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
-
 import pandas as pd
 import requests
 import json
@@ -11,9 +5,6 @@ import numpy as np
 import string as str
 from datetime import datetime
 from datetime import date
-
-
-# In[2]:
 
 
 #API key = 0bbd09d9d688940fa0354fb3a4aeffe4
@@ -29,9 +20,6 @@ def lista_filmes(ano):
 def idade(ator):
     return requests.get(f'https://api.themoviedb.org/3/person/{ator}?api_key=0bbd09d9d688940fa0354fb3a4aeffe4&language=en-US')
 #Esta função me retorna todas as informações da vida de um ator. Devo parsear até ficar só com a data de nascimento.
-
-
-# In[15]:
 
 
 #Parseando as informações de um filme de um determinado ano.
@@ -50,13 +38,7 @@ def filmes_df(inicio, fim):
 filmes = filmes_df(2005, 2005)
 
 
-# In[16]:
-
-
 filmes
-
-
-# In[17]:
 
 
 #------------------PEGANDO TODOS ATORES DE TODOS FILMES DE UM ANO X---------------------------#
@@ -74,6 +56,7 @@ def creditos():
 #essa informação e fico apenas com os ids de cada ator, que serão utilizados depois para pegar a sua idade
 #(que não consta na função 'credito()')
 
+
 #------------------FUNÇÃO PARA PEGAR TODOS OS IDS DE TODOS OS ATORES DE TODOS OS FILMES DO DATA FRAME INICIAL----------------#
 def todos_filmes():
     oi = creditos()
@@ -87,17 +70,9 @@ def todos_filmes():
 #Função retorna uma lista com listas dentro. Cada sub lista contem todos os ids de todos os 
 #atores de cada filme do ano X
 
+
 #Reunindo ao data frame principal:
 filmes['atores'] = todos_filmes()
-
-
-# In[18]:
-
-
-filmes
-
-
-# In[26]:
 
 
 #-------------------FUNÇÃO PARA PEGAR TODAS AS INFORMAÇÕES DE UM DETERMINADO ATOR----------------------#
@@ -122,9 +97,6 @@ def idades_dos_atores():
 filmes['ano_atores'] = idades_dos_atores()
 
 
-# In[27]:
-
-
 #--------------------FAZENDO ALGUNS AJUSTES AO BANCO DE DADOS-----------------------#
 
 #Problema da data: As datas vieram como string e eu preciso transformá-las em objeto de data:
@@ -144,14 +116,7 @@ for i in range(len(karai_biridin)):
 filmes['release_date'] = karai_biridin
 
 
-# filmes
-
-# In[29]:
-
-
 #Calculando idade final
-#Preciso dar um jeito de subtrair a idade de release pela idade do ator.
-# Algo deste tipo:
 
 oi = list(filmes['ano_atores'])
 oi2 = list(filmes['release_date'])
@@ -162,9 +127,6 @@ for k in range(len(oi)):
 
 #Reunindo no banco de dados:
 filmes['idades'] = final
-
-
-# In[31]:
 
 
 #------------------------------CÁLCULOS FINAIS-----------------------------#
@@ -193,16 +155,3 @@ def lista_medias(inicio, fim):
         final.append(media)
     return final
 lista_medias(2005, 2005)
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
