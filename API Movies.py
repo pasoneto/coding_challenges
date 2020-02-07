@@ -1,3 +1,6 @@
+#Data science project created to find out if actors in holywood are getting younger. 
+#edit.: They are not.
+
 import pandas as pd
 import requests
 import json
