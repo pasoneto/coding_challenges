@@ -1,2 +1,1 @@
-# Summer project created to investigate the age of actors in hollywood. 
-I 
+# Are actors in holywood getting younger?
