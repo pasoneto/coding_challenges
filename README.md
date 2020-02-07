@@ -1,1 +1,2 @@
-# Exercises for data science and programming logic.
+# Exercises for data science and programming logic. Python
+
