@@ -1,1 +1,2 @@
-# cognitive_galactic_farmer
+# Summer project created to investigate the age of actors in hollywood. 
+I 
