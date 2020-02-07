@@ -1,11 +1,7 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
-
 import string
 import numpy as np
+
+
 #Função contagem
 def contagem(caso, alfabeto):
     alfabeto = alfabeto
@@ -15,10 +11,6 @@ def contagem(caso, alfabeto):
             oi = i.count(k)
             contagem.append(oi)
     return contagem
-
-
-# In[6]:
-
 
 #Função para somar os resultados de ambos os casos
 def somando(caso):
@@ -33,10 +25,6 @@ def somando(caso):
 
 #Chamando a função
 #somando('aaAAIUHAIEUHiushiuhsiuhISURHISUHIUiusrhiurshiuHIURHSIURHIhisurhiuh')
-
-
-# In[54]:
-
 
 #Calculando porcentagens. Função retorna todas as porcentagens de cada letra.
 def fcont(caso):
@@ -61,12 +49,7 @@ def ondeta(caso):
         letras.append(alfabeto[j])
     return (letras, max(oi))
 
-
 ondeta('asl;dzc]ewa;d]sd.vcxhkjasdfa]]bkjolnnopuibuiopjl;')
-
-
-# In[62]:
-
 
 penis = 1, 4, 5, 2, 5, 6
 lista = []
