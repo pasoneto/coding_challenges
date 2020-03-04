@@ -50,9 +50,9 @@ def creditos():
     ids = list(filmes['id'])
     creditos = []
     for i in ids:
-        penis = requests.get(f'https://api.themoviedb.org/3/movie/{i}/credits?api_key=0bbd09d9d688940fa0354fb3a4aeffe4')
-        penis = penis.json()
-        creditos.append(penis)
+        varb = requests.get(f'https://api.themoviedb.org/3/movie/{i}/credits?api_key=0bbd09d9d688940fa0354fb3a4aeffe4')
+        varb = varb.json()
+        creditos.append(varb)
     creditos = pd.DataFrame(creditos)
     return creditos['cast']
 #Função me retorna todas as informações sobre todos os atores de todos os filmes de um ano X. Abaixo eu parseio
@@ -67,8 +67,8 @@ def todos_filmes():
     for k in range(len(oi)):
         #Cada k é um filme. Eu transformo em data frame porque aí eu posso chamar o 'ID' de cada ator, em cada filme. 
         #Daí já transformo pra lista imediatamente:
-        penis = list(pd.DataFrame(oi[k])['id'])
-        todos.append(penis)
+        varb = list(pd.DataFrame(oi[k])['id'])
+        todos.append(varb)
     return todos
 #Função retorna uma lista com listas dentro. Cada sub lista contem todos os ids de todos os 
 #atores de cada filme do ano X
@@ -91,11 +91,11 @@ def idades_dos_atores():
     final = [[] for i in range(len(oi))]
     for k in range(len(oi)):
         for i in range(len(oi[k])):
-            penis = idade(oi[k][i]).json()
-            penis = penis['birthday']
-            if penis != None:
+            varb = idade(oi[k][i]).json()
+            varb = varb['birthday']
+            if varb != None:
                 #Aqui eu apendo cada filme para o seu respectivo [] na lista final.
-                final[k].append(penis)
+                final[k].append(varb)
     return final
 filmes['ano_atores'] = idades_dos_atores()
 
@@ -137,8 +137,8 @@ filmes['idades'] = final
 def separando_por_ano(ano):
     date_from = pd.Timestamp(date(ano,1,1))
     date_to = pd.Timestamp(date(ano,12,31))
-    penis = filmes[(filmes['release_date'] > date_from ) & (filmes['release_date'] < date_to)]
-    return penis
+    varb = filmes[(filmes['release_date'] > date_from ) & (filmes['release_date'] < date_to)]
+    return varb
 
 #Função para calcular media de idade por ano.
 def media_por_ano(ano):
