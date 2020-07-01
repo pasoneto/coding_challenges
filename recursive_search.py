@@ -11,12 +11,12 @@ def busca_recursiva(lista, target):
         print('#-----------------ACABOU--------------------#')
         return lista.index(lista[aleatorio])
     if target > lista[aleatorio]:
-        print('Target era maior. roda dnv, fdp!')
+        print('Target era maior. roda dnv!')
         lista = lista[aleatorio:]
         print('lista nova agora é,', lista)
         return busca_recursiva(lista, target)
     if target < lista[aleatorio]:
-        print('Target era menor. Roda dnv, fdp!')
+        print('Target era menor. Roda dnv!')
         lista = lista[:aleatorio]
         print('nova lista agora é:',lista)
         return busca_recursiva(lista, target)
